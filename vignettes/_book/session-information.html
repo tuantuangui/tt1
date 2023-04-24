@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Session information | MNet</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Session information | MNet" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Session information | MNet" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Tuantuan Gui and Hai Fang" />
+
+
+<meta name="date" content="2023-04-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="example-rountine-analyses.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.27/datatables.js"></script>
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
+<link href="libs/dt-ext-buttons-1.12.1/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="libs/dt-ext-buttons-1.12.1/js/dataTables.buttons.min.js"></script>
+<script src="libs/dt-ext-buttons-1.12.1/js/buttons.html5.min.js"></script>
+<script src="libs/dt-ext-buttons-1.12.1/js/buttons.colVis.min.js"></script>
+<script src="libs/dt-ext-buttons-1.12.1/js/buttons.print.min.js"></script>
+<link href="libs/dt-ext-fixedcolumns-1.12.1/css/fixedColumns.dataTables.min.css" rel="stylesheet" />
+<script src="libs/dt-ext-fixedcolumns-1.12.1/js/dataTables.fixedColumns.min.js"></script>
+<link href="libs/dt-plugin-searchhighlight-1.12.1/source.css" rel="stylesheet" />
+<script src="libs/dt-plugin-searchhighlight-1.12.1/jquery.highlight.js"></script>
+<script src="libs/dt-plugin-searchhighlight-1.12.1/source.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction &amp; Installation</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#overview-of-workflow"><i class="fa fa-check"></i><b>1.1</b> Overview of Workflow</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#installation"><i class="fa fa-check"></i><b>1.2</b> Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="example-unique-analyses.html"><a href="example-unique-analyses.html"><i class="fa fa-check"></i><b>2</b> Example-unique analyses</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="example-unique-analyses.html"><a href="example-unique-analyses.html#loading-the-data"><i class="fa fa-check"></i><b>2.1</b> Loading the data</a></li>
+<li class="chapter" data-level="2.2" data-path="example-unique-analyses.html"><a href="example-unique-analyses.html#pathway-enrichment-analysis"><i class="fa fa-check"></i><b>2.2</b> Pathway enrichment analysis</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="example-unique-analyses.html"><a href="example-unique-analyses.html#extended-pathway-enrichment"><i class="fa fa-check"></i><b>2.2.1</b> Extended pathway enrichment</a></li>
+<li class="chapter" data-level="2.2.2" data-path="example-unique-analyses.html"><a href="example-unique-analyses.html#metabolite-pathway-enrichment"><i class="fa fa-check"></i><b>2.2.2</b> metabolite pathway enrichment</a></li>
+<li class="chapter" data-level="2.2.3" data-path="example-unique-analyses.html"><a href="example-unique-analyses.html#gene-pathway-enrichment"><i class="fa fa-check"></i><b>2.2.3</b> gene pathway enrichment</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="example-unique-analyses.html"><a href="example-unique-analyses.html#pathway-differential-abundance-score"><i class="fa fa-check"></i><b>2.3</b> Pathway differential abundance score</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="example-unique-analyses.html"><a href="example-unique-analyses.html#extended-pathway-differential-abundance-score"><i class="fa fa-check"></i><b>2.3.1</b> Extended pathway differential abundance score</a></li>
+<li class="chapter" data-level="2.3.2" data-path="example-unique-analyses.html"><a href="example-unique-analyses.html#metabolite-differential-abundance-score"><i class="fa fa-check"></i><b>2.3.2</b> metabolite differential abundance score</a></li>
+<li class="chapter" data-level="2.3.3" data-path="example-unique-analyses.html"><a href="example-unique-analyses.html#gene-differential-abundance-score"><i class="fa fa-check"></i><b>2.3.3</b> gene differential abundance score</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="example-unique-analyses.html"><a href="example-unique-analyses.html#msea-metabolite-set-enrichment-analysis"><i class="fa fa-check"></i><b>2.4</b> MSEA Metabolite Set Enrichment Analysis</a></li>
+<li class="chapter" data-level="2.5" data-path="example-unique-analyses.html"><a href="example-unique-analyses.html#subnetwork-analysis-of-metabolism-and-transcriptome-data-from-tnbc"><i class="fa fa-check"></i><b>2.5</b> Subnetwork analysis of Metabolism and transcriptome data from TNBC:</a></li>
+<li class="chapter" data-level="2.6" data-path="example-unique-analyses.html"><a href="example-unique-analyses.html#subnetwork-analysis-of-interested-metabolites-and-genes"><i class="fa fa-check"></i><b>2.6</b> Subnetwork analysis of interested metabolites and genes</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html"><i class="fa fa-check"></i><b>3</b> Example-rountine analyses</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#metabolite-and-kegg-name-change"><i class="fa fa-check"></i><b>3.1</b> Metabolite and kegg name change</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#metabolite-name-changed-to-refmet-name"><i class="fa fa-check"></i><b>3.1.1</b> Metabolite name changed to refmet name</a></li>
+<li class="chapter" data-level="3.1.2" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#metabolite-name-changed-to-kegg-id"><i class="fa fa-check"></i><b>3.1.2</b> Metabolite name changed to kegg id</a></li>
+<li class="chapter" data-level="3.1.3" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#metabolite-name-corresponding-to-kegg-pathway"><i class="fa fa-check"></i><b>3.1.3</b> Metabolite name corresponding to kegg pathway</a></li>
+<li class="chapter" data-level="3.1.4" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#metabolite-keggid-to-kegg-pathway"><i class="fa fa-check"></i><b>3.1.4</b> Metabolite keggid to kegg pathway</a></li>
+<li class="chapter" data-level="3.1.5" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#the-pathway-information"><i class="fa fa-check"></i><b>3.1.5</b> the pathway information</a></li>
+<li class="chapter" data-level="3.1.6" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#pathway-name-to-pathway-id"><i class="fa fa-check"></i><b>3.1.6</b> pathway name to pathway id</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#group-wise-analyses"><i class="fa fa-check"></i><b>3.2</b> Group-wise analyses</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#pca-plot"><i class="fa fa-check"></i><b>3.2.1</b> PCA plot</a></li>
+<li class="chapter" data-level="3.2.2" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#differnetial-metabolite-analysis"><i class="fa fa-check"></i><b>3.2.2</b> Differnetial metabolite analysis</a></li>
+<li class="chapter" data-level="3.2.3" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#differential-metabolites-volcano"><i class="fa fa-check"></i><b>3.2.3</b> Differential metabolites’ volcano</a></li>
+<li class="chapter" data-level="3.2.4" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#differential-metabolites-heatmap"><i class="fa fa-check"></i><b>3.2.4</b> Differential metabolites’ heatmap</a></li>
+<li class="chapter" data-level="3.2.5" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#differential-metabolites-zscore"><i class="fa fa-check"></i><b>3.2.5</b> Differential metabolites’ zscore</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#feature-selection"><i class="fa fa-check"></i><b>3.3</b> Feature selection</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#boruta"><i class="fa fa-check"></i><b>3.3.1</b> Boruta</a></li>
+<li class="chapter" data-level="3.3.2" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#random-forest"><i class="fa fa-check"></i><b>3.3.2</b> Random Forest</a></li>
+<li class="chapter" data-level="3.3.3" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#xgboost"><i class="fa fa-check"></i><b>3.3.3</b> XGBoost</a></li>
+<li class="chapter" data-level="3.3.4" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#lasso"><i class="fa fa-check"></i><b>3.3.4</b> LASSO</a></li>
+<li class="chapter" data-level="3.3.5" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#elastic-network"><i class="fa fa-check"></i><b>3.3.5</b> elastic network</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#pathway-analysis"><i class="fa fa-check"></i><b>3.4</b> Pathway analysis</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#pathview-only-metabolite"><i class="fa fa-check"></i><b>3.4.1</b> pathview only metabolite</a></li>
+<li class="chapter" data-level="3.4.2" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#pathview-metabolite-and-gene"><i class="fa fa-check"></i><b>3.4.2</b> pathview metabolite and gene</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#clinical-analysis"><i class="fa fa-check"></i><b>3.5</b> Clinical analysis</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#time-series-of-clinical"><i class="fa fa-check"></i><b>3.5.1</b> Time series of clinical</a></li>
+<li class="chapter" data-level="3.5.2" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#survival-analysis"><i class="fa fa-check"></i><b>3.5.2</b> Survival analysis</a></li>
+<li class="chapter" data-level="3.5.3" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#metabolites-survival-plot"><i class="fa fa-check"></i><b>3.5.3</b> Metabolites’ survival plot</a></li>
+<li class="chapter" data-level="3.5.4" data-path="example-rountine-analyses.html"><a href="example-rountine-analyses.html#cox-analysis"><i class="fa fa-check"></i><b>3.5.4</b> Cox analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="session-information.html"><a href="session-information.html"><i class="fa fa-check"></i><b>4</b> Session information</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MNet</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="session-information" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Session information<a href="session-information.html#session-information" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="session-information.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>## R version 4.2.1 (2022-06-23)
+## Platform: x86_64-apple-darwin17.0 (64-bit)
+## Running under: macOS Catalina 10.15.6
+## 
+## Matrix products: default
+## BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] survival_3.5-5     pathview_1.36.1    caret_6.0-94       lattice_0.21-8    
+##  [5] knitr_1.42         RColorBrewer_1.1-3 ggplot2_3.4.2      stringr_1.5.0     
+##  [9] dplyr_1.1.1        MNet_0.1.0        
+## 
+## loaded via a namespace (and not attached):
+##   [1] utf8_1.2.3                  tidyselect_1.2.0            RSQLite_2.3.1              
+##   [4] AnnotationDbi_1.58.0        htmlwidgets_1.6.2           grid_4.2.1                 
+##   [7] ranger_0.15.1               pROC_1.18.0                 devtools_2.4.5             
+##  [10] munsell_0.5.0               codetools_0.2-19            ragg_1.2.5                 
+##  [13] xgboost_1.7.5.1             DT_0.27                     MultiDataSet_1.24.0        
+##  [16] future_1.32.0               miniUI_0.1.1.1              withr_2.5.0                
+##  [19] colorspace_2.1-0            Biobase_2.56.0              Boruta_8.0.0               
+##  [22] highr_0.10                  supraHex_1.34.0             rstudioapi_0.14            
+##  [25] stats4_4.2.1                ggsignif_0.6.4              listenv_0.9.0              
+##  [28] MatrixGenerics_1.8.1        labeling_0.4.2              KEGGgraph_1.56.0           
+##  [31] GenomeInfoDbData_1.2.8      KMsurv_0.1-5                bit64_4.0.5                
+##  [34] farver_2.1.1                pheatmap_1.0.12             rprojroot_2.0.3            
+##  [37] parallelly_1.35.0           vctrs_0.6.1                 generics_0.1.3             
+##  [40] ipred_0.9-14                xfun_0.38                   qqman_0.1.8                
+##  [43] timechange_0.2.0            randomForest_4.7-1.1        R6_2.5.1                   
+##  [46] GenomeInfoDb_1.32.4         bitops_1.0-7                cachem_1.0.7               
+##  [49] DelayedArray_0.22.0         promises_1.2.0.1            scales_1.2.1               
+##  [52] nnet_7.3-18                 gtable_0.3.3                globals_0.16.2             
+##  [55] processx_3.8.0              timeDate_4022.108           rlang_1.1.0                
+##  [58] calibrate_1.7.7             systemfonts_1.0.4           splines_4.2.1              
+##  [61] rstatix_0.7.2               ModelMetrics_1.2.2.2        ropls_1.28.2               
+##  [64] hexbin_1.28.3               broom_1.0.4                 checkmate_2.1.0            
+##  [67] abind_1.4-5                 BiocManager_1.30.20         yaml_2.3.7                 
+##  [70] reshape2_1.4.4              backports_1.4.1             crosstalk_1.2.0            
+##  [73] httpuv_1.6.9                tools_4.2.1                 lava_1.7.2.1               
+##  [76] usethis_2.1.6               bookdown_0.33               ellipsis_0.3.2             
+##  [79] jquerylib_0.1.4             proxy_0.4-27                BiocGenerics_0.42.0        
+##  [82] sessioninfo_1.2.2           MultiAssayExperiment_1.22.0 Rcpp_1.0.10                
+##  [85] plyr_1.8.8                  zlibbioc_1.42.0             purrr_1.0.1                
+##  [88] RCurl_1.98-1.12             ps_1.7.4                    prettyunits_1.1.1          
+##  [91] ggpubr_0.6.0                rpart_4.1.19                urlchecker_1.0.1           
+##  [94] zoo_1.8-11                  S4Vectors_0.34.0            SummarizedExperiment_1.26.1
+##  [97] ggrepel_0.9.3               cluster_2.1.4               fs_1.6.1                   
+## [100] magrittr_2.0.3              data.table_1.14.8           dnet_1.1.7                 
+## [103] survminer_0.4.9             matrixStats_0.63.0          pkgload_1.3.2              
+## [106] hms_1.1.3                   mime_0.12                   evaluate_0.20              
+## [109] xtable_1.8-4                XML_3.99-0.14               gridExtra_2.3              
+## [112] IRanges_2.30.1              shape_1.4.6                 compiler_4.2.1             
+## [115] tibble_3.2.1                crayon_1.5.2                htmltools_0.5.5            
+## [118] mgcv_1.8-42                 later_1.3.0                 tzdb_0.3.0                 
+## [121] tidyr_1.3.0                 DBI_1.1.3                   lubridate_1.9.2            
+## [124] filesstrings_3.2.4          MASS_7.3-58.3               car_3.1-2                  
+## [127] Matrix_1.5-4                readr_2.1.4                 permute_0.9-7              
+## [130] cli_3.6.1                   parallel_4.2.1              gower_1.0.1                
+## [133] igraph_1.4.2                km.ci_0.5-6                 GenomicRanges_1.48.0       
+## [136] pkgconfig_2.0.3             recipes_1.0.5               foreach_1.5.2              
+## [139] bslib_0.4.2                 hardhat_1.3.0               XVector_0.36.0             
+## [142] prodlim_2023.03.31          callr_3.7.3                 digest_0.6.31              
+## [145] vegan_2.6-4                 graph_1.74.0                Biostrings_2.64.1          
+## [148] rmarkdown_2.21              survMisc_0.5.6              curl_5.0.0                 
+## [151] shiny_1.7.4                 lifecycle_1.0.3             nlme_3.1-162               
+## [154] jsonlite_1.8.4              carData_3.0-5               desc_1.4.2                 
+## [157] limma_3.52.4                fansi_1.0.4                 pillar_1.9.0               
+## [160] KEGGREST_1.36.3             fastmap_1.1.1               httr_1.4.5                 
+## [163] pkgbuild_1.4.0              glue_1.6.2                  remotes_2.4.2              
+## [166] png_0.1-8                   iterators_1.0.14            bit_4.0.5                  
+## [169] glmnet_4.1-7                Rgraphviz_2.40.0            class_7.3-21               
+## [172] stringi_1.7.12              sass_0.4.5                  profvis_0.3.7              
+## [175] blob_1.2.4                  textshaping_0.3.6           strex_1.6.0                
+## [178] org.Hs.eg.db_3.15.0         memoise_2.0.1               e1071_1.7-13               
+## [181] future.apply_1.10.0         ape_5.7-1</code></pre>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="example-rountine-analyses.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-example_routine.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

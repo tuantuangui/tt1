@@ -1,0 +1,51 @@
+--- 
+title: "MNet"
+author: "Tuantuan Gui and Hai Fang"
+date: "`r Sys.Date()`"
+description: >
+  This is a minimal example of using the bookdown package to write a book.
+  The HTML output format for this example is bookdown::gitbook,
+  set in the _output.yml file.
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{MNet}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Introduction & Installation
+
+Technological advances in metabolomics make it increasingly reliable to comprehensively detect and quantify small compounds in an unbiased manner. With the reduced costs come a wide range of applications, for example, in epidemiological, genetic and clinical studies. Meanwhile, integrated analyses of metabolomics with other omics, for example, gene expression transcriptomic datasets, are receiving the increasing attention, most of these existing tools, however, only deal with individual pathways or can’t extract the subnetwork involving multiple pathways; in other words, they do not consider the network knowledge of gene-metabolite or metabolite-metabolite relations hidden in available metabolic pathways.
+Here we present "MNet", an R package enabling network-based integration of metabolomics with clinical and transcriptomic data.  
+
+## Overview of Workflow
+The package MNet is designed to provide a collection of functionalities aiding in metabolome data interpretation together with clinical data and gene expression data. It not only supports the routine analyses and visualisations in terms of metabolomic datasets (including but not limited to: differential metabolites analyses/visualisations/feature selection), the differential abundance analyses which is designed to detect which pathways are differentially abundant between two conditions, but also is capable of carrying out integrated analysis of metabolic and clinical data (such as ggcor package), integrated analysis of metabolic and gene expression data (the metabolite and gene pathway analyses and the subnetwork analyses of metabolite-gene network analyses). Also supported is the time series analysis with the help of other packages (mFuzz package and supraHex package).
+
+![](data/fig1_v1024.png)
+
+## Installation
+The R package MNet requires R version 4.0.0 or higher, please see https://cran.r-project.org.
+#The package ggcor and XGR are from GitHub. Hence, it is recommended to install the package before installing MNet.
+#Please install it via github.
+
+```{r,eval=FALSE}
+if(!require(devtools)){
+  install.packages("devtools")
+}
+#devtools::install_github("Github-Yilei/ggcor")
+#devtools::install_github("hfang-bristol/XGR")
+```
+
+
+MNet is available for all operating systems and can be installed via the Github.
+
+```{r,eval=FALSE}
+devtools::install_github("tuantuangui/MNet")
+library(MNet)
+```
+
+check the package 'MNet' successfully installed
+```{r,eval=FALSE}
+library(help=MNet)
+```
+
