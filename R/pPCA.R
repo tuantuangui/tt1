@@ -8,10 +8,10 @@
 #' @export
 #'
 #' @examples
-#' result <- pPCA(mydata,group)
-#' result$p1
-#' result$p2
-#' result$p3
+#' p_PCA <- pPCA(meta_dat,group)
+#' p_PCA$p1
+#' p_PCA$p2
+#' p_PCA$p3
 pPCA <- function(mydata,group) {
 
   PC1 <- PC2 <- label <- NULL

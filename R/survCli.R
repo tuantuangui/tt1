@@ -7,7 +7,10 @@
 #' @export
 #'
 #' @examples
-#' p <- survCli(clinical_survival)
+#' library(survival)
+#' names(aml)[3] ="group"
+#' p=survCli(aml)
+#' p
 survCli <- function(clinical_survival) {
 
   #OS surv_object

@@ -9,12 +9,12 @@
 #'
 #' @examples
 #' library(dplyr)
-#' mydata_t <- mydata %>%
-#'   t() %>%
-#'   as.data.frame()
-#' # the group information must be tumor and normal
-#' mydata_t$group <- group
-#' result <- ML_RF(mydata_t)
+#' meta_dat1 <- t(meta_dat) %>%
+#'   as.data.frame() %>%
+#'   dplyr::mutate(group=group)
+#' result_ML_RF <- ML_RF(meta_dat1)
+#' result_ML_RF$p
+#' result_ML_RF$feature_result
 ML_RF <- function(mydata,ylim_min=0,seed=NULL) {
 
   group <- MeanDecreaseAccuracy <- test_set<- AUC <- type<- NULL

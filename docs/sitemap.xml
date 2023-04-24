@@ -58,7 +58,13 @@
     <loc>/reference/keggid2pathway.html</loc>
   </url>
   <url>
+    <loc>/reference/meta_impute.html</loc>
+  </url>
+  <url>
     <loc>/reference/mlimma.html</loc>
+  </url>
+  <url>
+    <loc>/reference/myscale.html</loc>
   </url>
   <url>
     <loc>/reference/name2keggid.html</loc>
@@ -104,5 +110,17 @@
   </url>
   <url>
     <loc>/reference/survMet.html</loc>
+  </url>
+  <url>
+    <loc>/reference/xEnrichViewer.html</loc>
+  </url>
+  <url>
+    <loc>/reference/xEnricher.html</loc>
+  </url>
+  <url>
+    <loc>/reference/xEnricherYours.html</loc>
+  </url>
+  <url>
+    <loc>/reference/xgr.html</loc>
   </url>
 </urlset>

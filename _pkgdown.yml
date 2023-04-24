@@ -48,3 +48,12 @@ reference:
     - survCli
     - survMet
     - MetCox
+
+  - title: other
+    contents:
+    - myscale
+    - xEnrichViewer
+    - xEnricher
+    - xgr
+    - xEnricherYours
+    - meta_impute

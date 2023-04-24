@@ -19,10 +19,8 @@ feature selection in lasso or elastic network
 }
 \examples{
 library(dplyr)
-mydata_t <- mydata \%>\%
-  t() \%>\%
-  as.data.frame()
-# the group information must be tumor and normal
-mydata_t$group <- group
-result <- ML_alpha(mydata_t)
+meta_dat1 <- t(meta_dat) \%>\%
+  as.data.frame() \%>\%
+  dplyr::mutate(group=group)
+result_ML_lasso <- ML_alpha(meta_dat1,method="lasso")
 }

@@ -11,12 +11,12 @@
 #' @import ggplot2
 #' @examples
 #' library(dplyr)
-#' kegg_pathway_filter <- kegg_pathway %>%
-#' dplyr::filter(!is.na(pathway_type)) %>%
-#'   dplyr::select(PATHWAY,type)
-#'
+#' database <- PathwayExtendData %>%
+#'       dplyr::filter(type=="metabolite") %>%
+#'       dplyr::select(name,kegg_pathwayname,kegg_category,type)
 #' kegg_id_need <- c("C05984","C02494")
-#' xgr_result <- xgr(kegg_id_need,kegg_pathway_filter,p_cutoff=1.1,noverlap_cutoff=0)
+#' xgr_result <- xgr(kegg_id_need,database,p_cutoff=1.1,noverlap_cutoff=0)
+#' result <- xgr(kegg_id_need,PathwayExtendData,p_cutoff=1.1,noverlap_cutoff= 0)
 #' xgr_result$output
 #' xgr_result$gp
 xgr <- function(metabolites_keggid,database,p_cutoff=0.05,noverlap_cutoff=0,test = c("hypergeo","fisher","binomial")) {

@@ -71,15 +71,96 @@
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">mydata_t</span> <span class="op">&lt;-</span> <span class="va">mydata</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/t.html" class="external-link">t</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in t(.):</span> object 'mydata' not found</span>
-<span class="r-in"><span><span class="co"># the group information must be tumor and normal</span></span></span>
-<span class="r-in"><span><span class="va">mydata_t</span><span class="op">$</span><span class="va">group</span> <span class="op">&lt;-</span> <span class="va">group</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'group' not found</span>
-<span class="r-in"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">ML_xgboost</span><span class="op">(</span><span class="va">mydata_t</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in caret::createDataPartition(mydata$group, p = 0.8, list = F):</span> object 'mydata_t' not found</span>
+<span class="r-in"><span><span class="va">meta_dat1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/t.html" class="external-link">t</a></span><span class="op">(</span><span class="va">meta_dat</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>group<span class="op">=</span><span class="va">group</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">result_ML_xgboost</span> <span class="op">&lt;-</span> <span class="fu">ML_xgboost</span><span class="op">(</span><span class="va">meta_dat1</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]	train-rmse:0.364289	test-rmse:0.420552 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [2]	train-rmse:0.265516	test-rmse:0.384204 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3]	train-rmse:0.193648	test-rmse:0.339845 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [4]	train-rmse:0.141388	test-rmse:0.332516 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5]	train-rmse:0.103498	test-rmse:0.333221 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [6]	train-rmse:0.076325	test-rmse:0.335841 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [7]	train-rmse:0.056819	test-rmse:0.339155 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [8]	train-rmse:0.042408	test-rmse:0.331050 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [9]	train-rmse:0.032089	test-rmse:0.325294 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10]	train-rmse:0.024444	test-rmse:0.326605 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [11]	train-rmse:0.018622	test-rmse:0.323060 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [12]	train-rmse:0.014536	test-rmse:0.320398 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13]	train-rmse:0.011500	test-rmse:0.321573 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [14]	train-rmse:0.009161	test-rmse:0.321526 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [15]	train-rmse:0.007429	test-rmse:0.320407 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [16]	train-rmse:0.006109	test-rmse:0.321239 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [17]	train-rmse:0.005093	test-rmse:0.321238 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [18]	train-rmse:0.004247	test-rmse:0.321081 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [19]	train-rmse:0.003556	test-rmse:0.321716 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [20]	train-rmse:0.002995	test-rmse:0.321772 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [21]	train-rmse:0.002536	test-rmse:0.321813 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [22]	train-rmse:0.002160	test-rmse:0.321843 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [23]	train-rmse:0.001849	test-rmse:0.321866 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [24]	train-rmse:0.001567	test-rmse:0.321768 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [25]	train-rmse:0.001345	test-rmse:0.321784 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [26]	train-rmse:0.001146	test-rmse:0.321718 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [27]	train-rmse:0.000998	test-rmse:0.321878 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [28]	train-rmse:0.000866	test-rmse:0.321881 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [29]	train-rmse:0.000755	test-rmse:0.321728 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [30]	train-rmse:0.000658	test-rmse:0.321723 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [31]	train-rmse:0.000576	test-rmse:0.321722 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [32]	train-rmse:0.000512	test-rmse:0.321728 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [33]	train-rmse:0.000472	test-rmse:0.321736 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [34]	train-rmse:0.000439	test-rmse:0.321679 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [35]	train-rmse:0.000409	test-rmse:0.321698 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [36]	train-rmse:0.000409	test-rmse:0.321696 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [37]	train-rmse:0.000409	test-rmse:0.321694 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [38]	train-rmse:0.000409	test-rmse:0.321693 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [39]	train-rmse:0.000409	test-rmse:0.321692 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [40]	train-rmse:0.000409	test-rmse:0.321692 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [41]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [42]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [43]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [44]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [45]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [46]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [47]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [48]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [49]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [50]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [51]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [52]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [53]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [54]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [55]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [56]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [57]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [58]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [59]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [60]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [61]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [62]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [63]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [64]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [65]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [66]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [67]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [68]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [69]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [70]	train-rmse:0.000409	test-rmse:0.321691 </span>
+<span class="r-plt img"><img src="ML_xgboost-1.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span><span class="va">result_ML_xgboost</span><span class="op">$</span><span class="va">p</span></span></span>
+<span class="r-plt img"><img src="ML_xgboost-2.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span><span class="va">result_ML_xgboost</span><span class="op">$</span><span class="va">feature_result</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     Feature         Gain      Cover  Frequency   Importance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1:  C02630 0.4089818516 0.04826255 0.03448276 0.4089818516</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:  C18170 0.2172191826 0.04826255 0.03448276 0.2172191826</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:  C00365 0.1183573581 0.14478764 0.10344828 0.1183573581</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:  C02291 0.0795052367 0.14478764 0.10344828 0.0795052367</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:  C05581 0.0739237925 0.15444015 0.20689655 0.0739237925</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:  C00170 0.0409078056 0.09652510 0.06896552 0.0409078056</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:  C00408 0.0318778255 0.02509653 0.03448276 0.0318778255</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8:  C15025 0.0171888836 0.07528958 0.10344828 0.0171888836</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:  C03264 0.0065374601 0.05405405 0.06896552 0.0065374601</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:  C00022 0.0052595434 0.09652510 0.06896552 0.0052595434</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11:  C05635 0.0002410603 0.11196911 0.17241379 0.0002410603</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

@@ -19,8 +19,6 @@ Imports:
     stats,
     pathview,
     survival,
-    #Mfuzz,
-    #supraHex,
     igraph,
     dnet,
     caret,
@@ -56,12 +54,11 @@ Suggests: knitr,
     BiocGenerics,
     fgsea
 VignetteBuilder: knitr
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 biocViews: Metabolomics
 Collate: 
     'DAscore.R'
     'DM.R'
-    'ExtendDAscore.R'
     'ML_Boruta.R'
     'ML_RF.R'
     'ML_alpha.R'
@@ -69,11 +66,8 @@ Collate:
     'ML_xgboost.R'
     'MSEA.R'
     'MetCox.R'
-    'MetaGeneCor.R'
     'PathwayAnalysis.R'
     'PathwayAnalysis_name2pathway.R'
-    'TSMfuzz.R'
-    'TSSupraHex.R'
     'col.key.R'
     'colorpanel2.R'
     'keggid2pathway.R'
@@ -85,8 +79,6 @@ Collate:
     'name2refmet.R'
     'node.color.R'
     'pCliTS.R'
-    'pCorCliMet.R'
-    'pCorCliMetMantel.R'
     'pHeatmap.R'
     'pMSEA.R'
     'pPCA.R'
@@ -97,7 +89,6 @@ Collate:
     'pathway2pathwayid.R'
     'pathwayinfo.R'
     'pdnet.R'
-    'reaction_metabolite_gene.R'
     'survCli.R'
     'survMet.R'
     'xDAGanno.r'

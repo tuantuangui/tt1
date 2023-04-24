@@ -75,10 +75,14 @@
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="DM.html">DM</a></span><span class="op">(</span><span class="va">mydata</span>,<span class="va">group</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in nrow(mydata):</span> object 'mydata' not found</span>
-<span class="r-in"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu">pVolcano</span><span class="op">(</span><span class="va">result</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in ifelse(mydata$fold_change &gt;= foldchange_threshold &amp; mydata$fdr_wilcox &lt;     0.05, "up", ifelse(mydata$fold_change &lt;= 1/foldchange_threshold &amp;     mydata$fdr_wilcox &lt; 0.05, "down", "normal")):</span> object 'result' not found</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">diff_result</span> <span class="op">&lt;-</span> <span class="fu"><a href="DM.html">DM</a></span><span class="op">(</span><span class="fl">2</span><span class="op">**</span><span class="va">meta_dat</span>,<span class="va">group</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> OPLS-DA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31 samples x 219 variables and 1 response</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> standard scaling of predictors and response(s)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       R2X(cum) R2Y(cum) Q2(cum) RMSEE pre ort pR2Y  pQ2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Total    0.485    0.864   0.697 0.194   1   1 0.05 0.05</span>
+<span class="r-plt img"><img src="pVolcano-1.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span><span class="va">p_volcano</span> <span class="op">&lt;-</span> <span class="fu">pVolcano</span><span class="op">(</span><span class="va">diff_result</span>,foldchange<span class="op">=</span><span class="fl">1.5</span><span class="op">)</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

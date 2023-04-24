@@ -74,14 +74,13 @@
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">pPCA</span><span class="op">(</span><span class="va">mydata</span>,<span class="va">group</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in nrow(mydata):</span> object 'mydata' not found</span>
-<span class="r-in"><span><span class="va">result</span><span class="op">$</span><span class="va">p1</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'result' not found</span>
-<span class="r-in"><span><span class="va">result</span><span class="op">$</span><span class="va">p2</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'result' not found</span>
-<span class="r-in"><span><span class="va">result</span><span class="op">$</span><span class="va">p3</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'result' not found</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">p_PCA</span> <span class="op">&lt;-</span> <span class="fu">pPCA</span><span class="op">(</span><span class="va">meta_dat</span>,<span class="va">group</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">p_PCA</span><span class="op">$</span><span class="va">p1</span></span></span>
+<span class="r-plt img"><img src="pPCA-1.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span><span class="va">p_PCA</span><span class="op">$</span><span class="va">p2</span></span></span>
+<span class="r-plt img"><img src="pPCA-2.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span><span class="va">p_PCA</span><span class="op">$</span><span class="va">p3</span></span></span>
+<span class="r-plt img"><img src="pPCA-3.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

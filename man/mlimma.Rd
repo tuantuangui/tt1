@@ -18,5 +18,5 @@ test
 the limma analysis for metabolism or transcriptome
 }
 \examples{
-result <- mlimma(mydata,group)
+result <- mlimma(meta_dat,group)
 }

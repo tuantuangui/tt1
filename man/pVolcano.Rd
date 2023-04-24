@@ -19,6 +19,6 @@ test
 Plot the volcano figure
 }
 \examples{
-result <- DM(mydata,group)
-p <- pVolcano(result)
+diff_result <- DM(2**meta_dat,group)
+p_volcano <- pVolcano(diff_result,foldchange=1.5)
 }

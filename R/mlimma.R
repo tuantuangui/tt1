@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples
-#' result <- mlimma(mydata,group)
+#' result <- mlimma(meta_dat,group)
 mlimma <- function(dat,group) {
 
   meta.data <- data.frame(Sample = colnames(dat))

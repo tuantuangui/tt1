@@ -1,4 +1,4 @@
-# MNet <img src="MNet_logo.png" align="right" alt="" width="120" />
+# MNet <img src="logo.png" align="right" alt="" width="120" />
 MNet is an R package that enables network-based interpretations of metabolomics, particularly integrated with clinical and transcriptomic data in an intuitive way.
 
 ## Installation

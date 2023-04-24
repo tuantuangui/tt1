@@ -17,5 +17,5 @@ test
 The cox analysis about the metabolites
 }
 \examples{
-result <- MetCox(dat)
+result <- MetCox(dat_surv)
 }

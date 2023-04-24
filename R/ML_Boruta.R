@@ -7,13 +7,10 @@
 #'
 #' @examples
 #' library(dplyr)
-#' mydata_t <- mydata %>%
-#'   t() %>%
-#'   as.data.frame()
-#' # the group information must be tumor and normal
-#' mydata_t$group <- group
-#' result <- ML_Boruta(mydata_t)
-
+#' meta_dat1 <- t(meta_dat) %>%
+#'   as.data.frame() %>%
+#'   dplyr::mutate(group=group)
+#' result_ML_Boruta <- ML_Boruta(meta_dat1)
 
 ML_Boruta <- function(mydata) {
 

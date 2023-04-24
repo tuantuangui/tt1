@@ -20,8 +20,14 @@ a figure
 The important network of the metabolite and the gene expression
 }
 \examples{
-load("/Users/guituantuan/Desktop/R_packages/MNet/R/test.data")
-pdf("test.pdf")
-pdnet(diff_metabolite,diff_gene,nsize=10)
-dev.off()
+names(diff_meta)[4]  <- "p_value"
+diff_metabolite <- diff_meta \%>\%
+  dplyr::filter(adj.P.Val < 0.01) \%>\%
+  dplyr::filter(abs(logFC)>1)
+names(diff_gene)[4] <- "p_value"
+diff_gene1 <- diff_gene \%>\%
+  dplyr::filter(adj.P.Val < 0.01) \%>\%
+  dplyr::filter(abs(logFC)>1)
+a <- pdnet(diff_meta,diff_gene,nsize=100)
+a <- pdnet(diff_metabolite[,8],diff_gene1[1:500,8])
 }
